@@ -1,8 +1,8 @@
 import React from 'react'
 import AdminLayout from '../../components/Layout/AdminLayout/AdminLayout'
 import Building from '../../components/AdminComponents/Building';
-function AddBuilding() {
-  const dataToPass = "Add Building";
+function EditBuilding() {
+    const dataToPass = "Edit Building";
   return (
     <div>
       <AdminLayout>
@@ -12,4 +12,4 @@ function AddBuilding() {
   )
 }
 
-export default AddBuilding
+export default EditBuilding

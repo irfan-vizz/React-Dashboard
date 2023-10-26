@@ -1,5 +1,7 @@
 import React from 'react'
 import {homeIcon, buildingIcon, invntryIcon, tradeIcon, reportsIcon, usersIcon, settingsIcon, notificationIcon} from './svgIcons';
+import logo from '../../../assets/profileImg.png'
+import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 function Header() {
   return (
@@ -66,11 +68,11 @@ function Header() {
 
                     </li>
                     <li className="hideThis">
-                        <a className="navItem" href="buildingList.html">
+                        <Link className="navItem" to={"/dashboard"}>
                             <i>{parse(buildingIcon.icon)}
                             </i>
                             <span>Buildings</span>
-                        </a>
+                        </Link>
                         {/* <!-- <div className="dropDownWrapper">
                             <ul>
                                 <li><a href="buildingList.html">Building List <i className="fa fa-angle-right"></i></a></li>
@@ -78,7 +80,7 @@ function Header() {
                             </ul>
                         </div> --> */}
                     </li>
-                    <li className="dropDown hideThis">
+                    {/* <li className="dropDown hideThis">
                         <a className="navItem" href="#">
                             <i>{parse(buildingIcon.icon)}
                             </i>
@@ -118,7 +120,7 @@ function Header() {
                                 </li>
                             </ul>
                         </div>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
             <div className="rightNav">
@@ -161,7 +163,7 @@ function Header() {
                                 <div className="notifications">
                                     <a className="new" href="#">
                                         <div className="userImg">
-                                            <img src="assets/images/profileImg.png" alt=""/>
+                                            <img src={logo} alt=""/>
                                         </div>
                                         <div className="notiContent">
                                             <h2>Jacob Watkins <span>5 mins ago</span></h2>
@@ -173,7 +175,7 @@ function Header() {
                                     </a>
                                     <a className="new" href="#">
                                         <div className="userImg">
-                                            <img src="assets/images/profileImg.png" alt=""/>
+                                            <img src={logo} alt=""/>
                                         </div>
                                         <div className="notiContent">
                                             <h2>Jacob Watkins <span>5 mins ago</span></h2>
@@ -185,7 +187,7 @@ function Header() {
                                     </a>
                                     <a href="#">
                                         <div className="userImg">
-                                            <img src="assets/images/profileImg.png" alt=""/>
+                                            <img src={logo} alt=""/>
                                         </div>
                                         <div className="notiContent">
                                             <h2>Jacob Watkins <span>5 mins ago</span></h2>
@@ -197,7 +199,7 @@ function Header() {
                                     </a>
                                     <a href="#">
                                         <div className="userImg">
-                                            <img src="assets/images/profileImg.png" alt=""/>
+                                            <img src={logo} alt=""/>
                                         </div>
                                         <div className="notiContent">
                                             <h2>Jacob Watkins <span>5 mins ago</span></h2>
@@ -209,7 +211,7 @@ function Header() {
                                     </a>
                                     <a href="#">
                                         <div className="userImg">
-                                            <img src="assets/images/profileImg.png" alt=""/>
+                                            <img src={logo} alt=""/>
                                         </div>
                                         <div className="notiContent">
                                             <h2>Jacob Watkins <span>5 mins ago</span></h2>
@@ -221,7 +223,7 @@ function Header() {
                                     </a>
                                     <a href="#">
                                         <div className="userImg">
-                                            <img src="assets/images/profileImg.png" alt=""/>
+                                            <img src={logo} alt=""/>
                                         </div>
                                         <div className="notiContent">
                                             <h2>Jacob Watkins <span>5 mins ago</span></h2>
@@ -238,7 +240,7 @@ function Header() {
                     <li className="d-none d-sm-block">
                         <div className="profile">
                             <div className="profileImg">
-                                <img src="assets/images/profileImg.png" alt=""/>
+                                <img src={logo} alt=""/>
                             </div>
                             <span>George Lucas</span>
                         </div>

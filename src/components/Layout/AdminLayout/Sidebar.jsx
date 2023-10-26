@@ -1,18 +1,19 @@
 import React from 'react'
 import {homeIcon, buildingIcon, invntryIcon, tradeIcon, reportsIcon, usersIcon, settingsIcon, notificationIcon} from './svgIcons';
 import parse from 'html-react-parser';
-
+import { Link } from 'react-router-dom';
 function Sidebar() {
+    const publicAssetsPath = process.env.PUBLIC_URL + '/assets';
   return (
     <>
       <section className="sideBar">
         <div className="logoWrapper">
-            <a className="logo" href="#">
-                <img className="logo" src="assets/images/logosm.png" alt="" />
-            </a>
+            <Link className="logo" to={'/dashboard'}>
+                <img className="logo" src={publicAssetsPath + '/images/logosm.png'} alt="" />
+            </Link>
         </div>
         <div className="menuListing mainMenu">
-            <ul>
+            {/* <ul>
                 <li>
                     <a className="navItem" data-toggle="purchase">
                         <i> {parse(buildingIcon.icon)}</i>
@@ -37,7 +38,7 @@ function Sidebar() {
                         <span>Traffic Sheet</span>
                     </a>
                 </li>
-            </ul>
+            </ul> */}
         </div>
         <div className="menuListing logout">
             <ul>

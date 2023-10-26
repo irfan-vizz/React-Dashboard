@@ -5,10 +5,14 @@ import Sidebar from './Sidebar'
 function AdminLayout({children}) {
   return (
     <>
+      <div className='outerWrap'>
         <Header/>
         <Sidebar/>
-        {children}
+        <div className='pageWrapper'>
+          {children}
+        </div>
         <Footer/>
+      </div>
     </>
   )
 }
