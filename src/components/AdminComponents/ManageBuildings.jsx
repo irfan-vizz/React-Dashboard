@@ -1,27 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 function ManageBuildings() {
+    let buildingsApiString = 'http://localhost:3001/posts'
+    useEffect(() => {
+        console.log('useEffect ran'); // Add this line
+        // axios.get('http://localhost:3001/posts')
+        //   .then((response) => {
+        //     console.log(response.data)
+        //   })
+        //   .catch((error) => {
+        //     console.error('Error fetching data:', error);
+        //   });
+        axios.post('http://localhost:3001/posts', { "id": 3, "title": "JSON Server Example2" })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }, []);
+      console.log('Component rendered'); // Add this line
   return (
     <>
-        <div class="contentCard">
-            <div class="titleWrapper"><span>Manage Buildings</span>
+        <div className="contentCard">
+            <div className="titleWrapper"><span>Manage Buildings</span>
 
                 <div>
-                    {/* <!-- <button class="myBtn success squre toggleFilters">
+                    {/* <!-- <button className="myBtn success squre toggleFilters">
                         <svg viewBox="0 0 24 24">
                             <use xlink:href="#filter"></use>
                         </svg>
                     </button> --> */}
-                    <button class="myBtn shadow ml-auto"><i class="fa fa-plus-circle"></i> <Link to={'/dashboard/building_add'}> Add Building </Link></button>
+                    <button className="myBtn shadow ml-auto"><i className="fa fa-plus-circle"></i> <Link to={'/dashboard/building_add'}> Add Building </Link></button>
                 </div>
             </div>
 
-                <div class="row align-items-md-end">
-                    <div class="col-12 col-md-4 col-lg-3 col-xl-2 mb-3">
-                        <div class="search">
-                            <div class="searchField">
-                                <input class="form-control" type="text" placeholder="Search"/>
-                                <div class="icon">
+                <div className="row align-items-md-end">
+                    <div className="col-12 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <div className="search">
+                            <div className="searchField">
+                                <input className="form-control" type="text" placeholder="Search"/>
+                                <div className="icon">
                                     {/* <svg viewBox="0 0 24.46 24.46">
                                         <use xlink:href="#search"></use>
                                     </svg> */}
@@ -34,26 +54,26 @@ function ManageBuildings() {
 
                 </div>
 
-            <div class="mainTable table-responsive dataTable">
-                <table class="table table-striped">
+            <div className="mainTable table-responsive dataTable">
+                <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th><input type="checkbox" class="customCheck"/></th>
-                            <th class="sort">Building ID</th>
-                            <th class="sort">Address</th>
-                            <th class="sort">City</th>
-                            <th class="sort">Postal</th>
-                            <th class="sort">Province</th>
-                            <th class="sort">Region</th>
-                            <th class="sort">Intersection</th>
-                            <th class="sort">Phone</th>
-                            <th class="sort">No. Of Suites</th>
-                            <th class="text-right">Action</th>
+                            <th><input type="checkbox" className="customCheck"/></th>
+                            <th className="sort">Building ID</th>
+                            <th className="sort">Address</th>
+                            <th className="sort">City</th>
+                            <th className="sort">Postal</th>
+                            <th className="sort">Province</th>
+                            <th className="sort">Region</th>
+                            <th className="sort">Intersection</th>
+                            <th className="sort">Phone</th>
+                            <th className="sort">No. Of Suites</th>
+                            <th className="text-right">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" class="customCheck"/></td>
+                            <td><input type="checkbox" className="customCheck"/></td>
                             <td><b>1</b></td>
                             <td><img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/28/000000/external-building-real-estate-flatart-icons-lineal-color-flatarticons-1.png"/> 1030 Thinkbound Drive</td>
                             <td>Oakville</td>
@@ -63,14 +83,14 @@ function ManageBuildings() {
                             <td>Trafalgar & QEW</td>
                             <td>(867) 969-6766</td>
                             <td>1</td>
-                            <td class="text-right">
-                                <div class="dropleft">
-                                    <button type="button" class="actionEclips dropdown-toggle" data-toggle="dropdown">
+                            <td className="text-right">
+                                <div className="dropleft">
+                                    <button type="button" className="actionEclips dropdown-toggle" data-toggle="dropdown">
                                         <span></span>
                                         <span></span>
                                         <span></span>
                                     </button>
-                                    <div class="dropdown-menu dropDesign">
+                                    <div className="dropdown-menu dropDesign">
                                         <Link to={'/dashboard/building_edit'}>Edit 
                                             <span>
                                                 {/* <svg viewBox="0 0 13.635 14.678">
@@ -100,8 +120,8 @@ function ManageBuildings() {
                 </table>
             </div>
 
-            <div class="cardFooter">
-                <button class="myBtn danger squre deleteThis">
+            <div className="cardFooter">
+                <button className="myBtn danger squre deleteThis">
                     {/* <svg viewBox="0 0 24.728 19.783">
                         <use xlink:href="#delete"></use>
                     </svg> */}
