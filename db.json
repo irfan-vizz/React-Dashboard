@@ -1,16 +1,44 @@
 {
-  "posts": [
+  "buildings": [
     {
       "id": 1,
-      "title": "Hello, World!"
+      "address":
+        {
+          "street":"1030 Thinkbound Drive",
+          "country":"New York",
+          "province":"Ontario",
+          "city":"Oakville",
+          "postalCode":"L6H 2A8",
+          "legacyId":"25D3A",
+          "areaSize":"2500 sqft",
+          "region":"Oakville",
+          "dscrpton":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        },
+      "BuildingContact":{
+          "fullName":"Irfan Ali Jutt",
+          "contact":"(867) 969-6766",
+          "email":"engr.irfanali970@gmail.com"
+        }
     },
     {
       "id": 2,
-      "title": "JSON Server Example"
-    },
-    {
-      "id": 3,
-      "title": "JSON Server Example2"
+      "address":
+        {
+          "street":"1032 Thinkbound Drive",
+          "country":"London",
+          "province":"London",
+          "city":"London",
+          "postalCode":"L6H 2A8",
+          "legacyId":"25L3A",
+          "areaSize":"2200 sqft",
+          "region":"UK",
+          "dscrpton":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        },
+      "BuildingContact":{
+          "fullName":"Irfan Ali Jutt",
+          "contact":"(867) 969-6766",
+          "email":"engr.irfanali970@gmail.com"
+        }
     }
   ]
 }
