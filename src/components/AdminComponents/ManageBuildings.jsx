@@ -1,28 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+
+
 function ManageBuildings() {
-    const [BuildingData, setBuildingData] = useState([])  
+    const [BuildingData, setBuildingData] = useState([])
+    const [deleteDone, setdeleteDone] = useState(false)   
     let buildingsApiString = 'http://localhost:3001/buildings'
+    console.log(deleteDone,"deleteDone")
+    function deleteBuilding(e){
+        // alert(idToDelet)
+        console.log(e.target)
+        const {id} = e.target
+        console.log(id)
+        setdeleteDone(true)
+          axios.delete(`http://localhost:3001/buildings/${id}`)
+           .then(function (response) {
+             console.log(response);
+             setdeleteDone(true)
+           })
+           .catch(function (error) {
+             console.log(error);
+           });
+     }
     useEffect(() => {
         console.log('useEffect ran'); // Add this line
         axios.get('http://localhost:3001/buildings')
           .then((response) => {
             console.log(response.data)
             setBuildingData(response.data)
+            setdeleteDone(false)
             console.log(BuildingData,"BuildingData")
           })
           .catch((error) => {
             console.error('Error fetching data:', error);
           });
-        // axios.post('http://localhost:3001/posts', { "id": 3, "title": "JSON Server Example2" })
-        //   .then(function (response) {
-        //     console.log(response);
-        //   })
-        //   .catch(function (error) {
-        //     console.log(error);
-        //   });
-      }, []);
+      }, [deleteDone]);
       console.log('Component rendered'); // Add this line
   return (
     <>
@@ -83,14 +96,14 @@ function ManageBuildings() {
                     {BuildingData.map((buildingEle, buildingIndex)=>(
                         <tr key ={buildingIndex}>
                         <td><input type="checkbox" className="customCheck"/></td>
-                        <td><b>{buildingEle.id}</b></td>
+                        <td><b>{buildingIndex + 1}</b></td>
                         <td><img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/28/000000/external-building-real-estate-flatart-icons-lineal-color-flatarticons-1.png"/> {buildingEle.address.street}</td>
                         <td>{buildingEle.address.city}</td>
                         <td>{buildingEle.address.postalCode}</td>
                         <td>{buildingEle.address.province}</td>
                         <td>{buildingEle.address.region}</td>
                         <td>Trafalgar & QEW</td>
-                        <td>{buildingEle.BuildingContact.contact}</td>
+                        {/* <td>{buildingEle.BuildingContact.contact}</td> */}
                         <td>1</td>
                         <td className="text-right">
                             <div className="dropleft">
@@ -100,7 +113,7 @@ function ManageBuildings() {
                                     <span></span>
                                 </button>
                                 <div className="dropdown-menu dropDesign">
-                                    <Link to={'/dashboard/building_edit'}>Edit 
+                                    <Link to={`/dashboard/building_edit/${buildingEle.id}`}>Edit 
                                         <span>
                                             {/* <svg viewBox="0 0 13.635 14.678">
                                                 <use xlink:href="#edit"></use>
@@ -124,6 +137,7 @@ function ManageBuildings() {
                                 </div>
                             </div>
                         </td>
+                        <td ><button className='myBtn shadow ml-auto' id={buildingEle.id} onClick={deleteBuilding}>delete</button> </td>
                     </tr>
                 // <li key ={buildingIndex}>{buildingEle.id}:{buildingEle.title}</li>
             ))}
@@ -137,6 +151,7 @@ function ManageBuildings() {
                     {/* <svg viewBox="0 0 24.728 19.783">
                         <use xlink:href="#delete"></use>
                     </svg> */}
+                    delete
                 </button>
             </div>
         </div>

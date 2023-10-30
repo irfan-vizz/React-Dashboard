@@ -18,7 +18,7 @@ import {
         <Route index element={<MainLayout/>}/>
         <Route path="/dashboard" element={<BuildingList/>} />
         <Route path="/dashboard/building_add" element={<AddBuilding/>} />
-        <Route path="/dashboard/building_edit" element={<EditBuilding/>} />
+        <Route path="/dashboard/building_edit/:id" element={<EditBuilding/>} />
         <Route path="/dashboard/building_detail" element={<BuildingDetail/>} />
       </Route>
     )
