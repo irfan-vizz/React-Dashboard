@@ -12,6 +12,7 @@ import {
   import EditBuilding from '../pages/AdminPages/EditBuilding';
   import BuildingList from '../pages/AdminPages/BuildingList';
   import BuildingDetail from '../pages/AdminPages/BuildingDetail';
+  import UsersList from '../pages/AdminPages/userModule/UsersList';
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" >
@@ -20,6 +21,7 @@ import {
         <Route path="/dashboard/building_add" element={<AddBuilding/>} />
         <Route path="/dashboard/building_edit/:id" element={<EditBuilding/>} />
         <Route path="/dashboard/building_detail" element={<BuildingDetail/>} />
+        <Route path="/dashboard/users" element={<UsersList/>} />
       </Route>
     )
   );

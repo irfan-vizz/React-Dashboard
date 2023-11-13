@@ -126,11 +126,11 @@ function Header() {
             <div className="rightNav">
                 <ul className="navList">
                     <li className="hideThis">
-                        <a className="navItem" href="usesrList.html">
+                    <Link className="navItem" to={"/dashboard/users"}>
                             <i>{parse(buildingIcon.icon)}
                             </i>
                             <span>Users</span>
-                        </a>
+                    </Link >
                     </li>
                     <li className="dropDown hideThis">
                         <a className="navItem" href="#">

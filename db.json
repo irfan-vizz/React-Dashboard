@@ -8,7 +8,7 @@
         "city": "Oakville",
         "postalCode": "L6H 2A8",
         "legacyId": "25D3A",
-        "areaSize": "2500 sqft",
+        "areaSize": "2600 sqft",
         "region": "Oakville",
         "dscrpton": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
       },
@@ -27,19 +27,6 @@
         "dscrpton": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
       },
       "id": 2
-    },
-    {
-      "address": {
-        "street": "E-8",
-        "country": "Pakistan",
-        "city": "Islamabad",
-        "postalCode": "45000",
-        "legacyId": "LHR",
-        "areaSize": "2524sq",
-        "region": "Punjab",
-        "province": "Punjab"
-      },
-      "id": "1698663005776-8422"
     }
   ]
 }
